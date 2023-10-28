@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/finches/cat-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>Finch List</h1>
+  {% comment %} <img src="{% static 'images/cool-cat.svg' %}" alt="A cool cat" />
+  <img src="{% static 'images/happy-cat.svg' %}" alt="A happy cat" />
+  <img src="{% static 'images/teacup-cat.svg' %}" alt="A cat in a teacup" />
+  <img src="{% static 'images/cat-in-box.svg' %}" alt="A cat in a box" /> {% endcomment %}
+</section>
+
+<section class="card-container">
+  {% for finch in finches %}
+    <div class="card">
+      <div class="card-content">
+        <div class="card-img-container">
+          <img 
+            src="{% static 'images/logo-robin.svg' %}" 
+            alt=" an orange and grey finch"
+          >
+        </div>
+        <h2 class="card-title">{{ cat.name }}</h2>
+        {% if finch.age > 0 %}
+          <p>A {{ finch.age }} year old {{ finch.color }}</p>
+        {% else %}
+          <p>A {{ finch.color }} lives in the United States.</p>
+        {% endif %}
+        <p><small>{{ finch.description }}</small></p>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
