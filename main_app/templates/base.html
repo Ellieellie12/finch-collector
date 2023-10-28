@@ -1,4 +1,4 @@
-{% comment %} {% load static %} {% endcomment %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +11,7 @@
     href=""
   >
   <title>Finch Collector</title>
-  {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"> {% endcomment %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   {% block head %}
   {% endblock %}
 </head>
@@ -20,14 +20,15 @@
     <div class="header-logo-container">
       <a href="/">
         <img 
-          src=""
+          src="{% static "images/logo-robin.svg"%}"
           alt="The Finch Collector Logo"
+          class="finch-logo"
         >
       </a>
     </div>
     <nav>
       <ul>
-        <li><a href="/about">All Finches</a></li>
+        <li><a href="/finches">All Finches</a></li>
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
