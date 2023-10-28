@@ -5,7 +5,7 @@
 <link 
   rel="stylesheet"
   type="text/css"
-  href="{% static 'css/finches/cat-index.css' %}"
+  href="{% static 'css/finches/finch-index.css' %}"
 />
 {% endblock %}
 
@@ -13,32 +13,36 @@
 
 <section class="page-header">
   <h1>Finch List</h1>
-  {% comment %} <img src="{% static 'images/cool-cat.svg' %}" alt="A cool cat" />
-  <img src="{% static 'images/happy-cat.svg' %}" alt="A happy cat" />
-  <img src="{% static 'images/teacup-cat.svg' %}" alt="A cat in a teacup" />
-  <img src="{% static 'images/cat-in-box.svg' %}" alt="A cat in a box" /> {% endcomment %}
+  <img src="{% static 'images/logo-robin.svg' %}" alt="orange and grey finch" />
+  <img src="{% static 'images/logo-robin.svg' %}" alt="orange and grey finch" />
+  <img src="{% static 'images/logo-robin.svg' %}" alt="orange and grey finch" />
+  <img src="{% static 'images/logo-robin.svg' %}" alt="orange and grey finch" /> 
 </section>
 
 <section class="card-container">
   {% for finch in finches %}
     <div class="card">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img 
+      <a href="/finches/{{ finch.id }}">
+
+        <div class="card-content">
+          <div class="card-img-container">
+            <img 
             src="{% static 'images/logo-robin.svg' %}" 
             alt=" an orange and grey finch"
-          >
-        </div>
-        <h2 class="card-title">{{ cat.name }}</h2>
-        {% if finch.age > 0 %}
+            class="orange-finch"
+            >
+          </div>
+          <h2 class="card-title">{{ finch.name }}</h2>
+          {% if finch.age > 0 %}
           <p>A {{ finch.age }} year old {{ finch.color }}</p>
-        {% else %}
+          {% else %}
           <p>A {{ finch.color }} lives in the United States.</p>
-        {% endif %}
-        <p><small>{{ finch.description }}</small></p>
+          {% endif %}
+          <p><small>{{ finch.description }}</small></p>
+        </div>
+      </a>
       </div>
-    </div>
-  {% endfor %}
+      {% endfor %}
 </section>
 
 {% endblock %}
