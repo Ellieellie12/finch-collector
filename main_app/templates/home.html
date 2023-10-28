@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<section class="logo-container">
+  <div class="finch-container">
+    <img src="{% static 'images/logo-robin.svg' %}" alt="The Finch Collector Finch" class="home-finch" />
+  </div>
+  <img 
+    src="{% static 'images/logo-robin.svg' %}" 
+    alt="Text reads: Finch  Collector"
+    class="home-finch" 
+  />
+</section>
+
+{% endblock %}
