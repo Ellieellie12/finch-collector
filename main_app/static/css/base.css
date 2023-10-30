@@ -27,9 +27,16 @@ body {
   --card-border-radius: 6px;
 }
 
-.finch-logo {
-  height:50px;
-}
+/* .finch-logo {
+  height:15px;
+  width: 15px;
+} */
+
+/* .header-logo-container {
+  margin: auto;
+  padding: 10px 20px 0;
+  max-width: 500px;
+} */
 
 nav,
 .header-logo-container {
