@@ -1,6 +1,12 @@
 from django.db import models
 from django.urls import reverse
 
+MEALS = (
+  ('B', 'Breakfast'),
+  ('L', 'Lunch'),
+  ('D', 'Dinner')
+)
+
 class Finch(models.Model):
   name = models.CharField(max_length=100)
   color = models.CharField(max_length=100)
@@ -13,3 +19,6 @@ class Finch(models.Model):
   def get_absolute_url(self):
       return reverse("finch-detail", kwargs={"finch_id": self.id})
   
+class Feeding(models.Model):
+  date = models.DateField()
+  meal = models.CharField(max_length=1)
