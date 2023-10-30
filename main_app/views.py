@@ -22,7 +22,7 @@ class FinchCreate(CreateView):
   success_url = '/finches'
 
 class FinchUpdate(UpdateView):
-  model= Finch
+  model = Finch
   fields = ['color', 'description', 'age']
 
 class FinchDelete(DeleteView):

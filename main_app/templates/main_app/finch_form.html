@@ -6,9 +6,12 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="page-header">
-  <h1>Add a Finch</h1>
+  {% if finch %}
+    <h1>Edit {{ finch.name }}</h1>
+  {% else %}
+    <h1>Add a Finch</h1>
+  {% endif %}
   <img src="{% static 'images/logo-robin.svg' %}" alt="an orange and grey finch"/>
 </div>
 <form action="" method="post" class="form-container">
