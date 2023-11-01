@@ -170,6 +170,7 @@
 .toy-container .btn {
   padding: 3px 10px;
   margin-left: 10px;
+  /* color: red; */
 }
 
 #file-input {
@@ -195,6 +196,11 @@
     width: 25%;
     max-width: 250px;
     margin-right: 25px;
+  
+  }
+
+  .finch-main {
+    height: 200px;
   }
 
   .feedings-toy-container {

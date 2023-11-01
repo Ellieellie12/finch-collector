@@ -26,16 +26,17 @@
     <img 
       src="{% static 'images/logo-robin.svg' %}" 
       alt="an orange and grey finch"
+      class="finch-main"
     > 
   </div>
   <div class="finch-details">
     <h1>{{ finch.name }}</h1>
     {% if finch.age > 0 %}
-      <h2>A {{ finch.age }} year old {{ finch.color}}</h2>
+      <h2>A {{ finch.age }} year old {{ finch.color}} finch </h2>
     {% else %}
       <h2>A {{ finch.color }} lives in the United States.</h2>
     {% endif %}
-    <p>{{ finch.description }}</p>
+    <p>{{ finch.name }} is {{ finch.description }}!</p>
     <div class='finch-actions'>
       <a href="{% url 'finch-update' finch.id %}" class='btn warn'>Edit</a>
       <a href="{% url 'finch-delete' finch.id %}" class='btn danger'>Delete</a>
