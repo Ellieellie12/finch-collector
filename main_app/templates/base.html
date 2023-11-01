@@ -18,21 +18,28 @@
 <body>
   <header>
     <div class="header-logo-container">
-      {% comment %} <a href="/"  class="finch-logo">
+    {% comment %} <a href="/"  class="finch-logo">
         <img 
           src="{% static "images/logo-robin.svg"%}"
           alt="The Finch Collector Logo"
           class="finch-logo"
         >
-      </a>  {% endcomment %}
+      </a>   {% endcomment %}
     </div>
     <nav>
       <ul>
+      {% if user.is_authenticated %}
         <li><a href="{% url 'finch-index' %}">All Finches</a></li>
         <li><a href="{% url 'toy-index' %}">All Toys</a></li>
         <li><a href="{% url 'finch-create' %}">Add a Finch </a></li>
         <li><a href="{% url 'toy-create' %}">Add a Toy</a></li>
         <li><a href="{% url 'about'%}">About</a></li>
+        <li><a href="{% url 'logout' %}">Log Out</a></li>
+      {% else %}
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'home' %}">Login</a></li>
+      {% endif %}
+        
       </ul>
     </nav>
   </header>
