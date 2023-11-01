@@ -21,12 +21,12 @@
 
 {% block content %}
 
-<section class="finch -container">
+<section class="finch-container">
   <div class="finch-img">
     <img 
       src="{% static 'images/logo-robin.svg' %}" 
       alt="an orange and grey finch"
-    >
+    > 
   </div>
   <div class="finch-details">
     <h1>{{ finch.name }}</h1>
@@ -92,7 +92,7 @@
       </table>
     {% else %}
       <div class="subsection-content">
-        <p>{{ finch.name }} has never been fed 😔</p>
+        <p>{{ finch.name }} has never been fed!</p>
       </div>
     {% endif %}
   </section>
